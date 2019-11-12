@@ -10,6 +10,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 
@@ -57,9 +58,9 @@ class Fatwa extends Component {
                 </Text>
               </View>
               <View>
-                <Text style={styles.description}>
-                  {fatwa.content}
-                </Text>
+                <HTMLView
+                  value={fatwa.content}
+                />
               </View>
             </View>
           </View>

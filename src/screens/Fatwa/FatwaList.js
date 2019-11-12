@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
+import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 const { width, height } = Dimensions.get('window');
@@ -59,7 +60,7 @@ class Fatwa extends Component {
         <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'rgb(227, 227, 227)'}}>
           <Image source={{uri: item.thumbnail }} style={{height: 85, width: 110}}/>
           <View style={{paddingTop: 4, paddingLeft: 20,  paddingBottom: 10, width: 200, justifyContent: 'space-between'}}>
-            <Text style={{fontSize: 13, fontWeight: 'bold'}}>{item.title}</Text>
+            <HTMLView value={item.title} stylesheet={styles.title}/>
             <Text style={{fontSize: 10, fontFamily: 'sans', color: 'rgb(121, 121, 121)'}}>{item.date}</Text>
           </View>
         </View>
@@ -110,6 +111,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     fontFamily: 'SourceSansPro',
+  },
+  title: {
+    fontSize: 13,
+    fontWeight: 'bold'
   },
   back: {
     width: 30,

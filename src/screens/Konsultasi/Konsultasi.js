@@ -10,6 +10,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 
@@ -33,9 +34,9 @@ class Fatwa extends Component {
 
   render() {
     const { navigation } = this.props;
-    const fatwa = navigation.getParam('fatwa');
+    const konsultasi = navigation.getParam('konsultasi');
 
-    {fatwa.title}
+    {konsultasi.title}
     return (
       <View style={{flex: 1, backgroundColor: '#fff'}}>
 
@@ -43,23 +44,24 @@ class Fatwa extends Component {
           <View style={[styles.flex, styles.content]}>
             <View style={{backgroundColor: 'red', width, height: 300}}>
               <Image
-                source={{uri: fatwa.thumbnail }}
+                source={{uri: konsultasi.thumbnail }}
                 resizeMode='cover'
                 style={{ width: '100%', height: '100%'}}
               />
             </View>
             <View style={[styles.flex, styles.contentHeader]}>
-              <Text style={styles.title}>{fatwa.title}</Text>
+              <Text style={styles.title}>{konsultasi.title}</Text>
               <View style={[styles.row,{ marginVertical: 36 / 2 }
               ]}>
+
                 <Text style={{ marginLeft: 8, color: '#BCCCD4', marginTop: -10}}>
-                   {fatwa.date}
+                   {konsultasi.date}
                 </Text>
               </View>
               <View>
-                <Text style={styles.description}>
-                  {fatwa.content}
-                </Text>
+                  <HTMLView
+                    value={konsultasi.content}
+                  />
               </View>
             </View>
           </View>
