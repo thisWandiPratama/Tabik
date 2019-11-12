@@ -34,10 +34,10 @@ class Pengurus extends Component {
 
         <View style={[styles.container]}>
           <ImageBackground
-              style={[styles.divPengurus, styles.tengah]}
+              style={[styles.divPengurus]}
               source={ require('../../../assets/background/pengurus.jpg') }
             >
-              <Icon name="users" color={'#fff'} size={50} />
+              <Icon name="users" color={'#fff'} size={40} />
               <Text style={styles.title}>SUSUNAN PENGURUS</Text>
             </ImageBackground>
 
@@ -51,10 +51,6 @@ class Pengurus extends Component {
 export default Pengurus;
 
 const styles = StyleSheet.create({
-  tengah: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   back: {
     width: 30,
     height:'100%',
@@ -90,10 +86,15 @@ const styles = StyleSheet.create({
   divPengurus: {
     width: 320,
     height: 161,
+    paddingHorizontal: 30,
     backgroundColor: 'rgba(70, 192, 185, 0.67)',
+    flexDirection: 'row',
     borderRadius: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   title: {
+    width: '90%',
     fontSize: 14,
     marginTop: 17,
     color: '#fff',

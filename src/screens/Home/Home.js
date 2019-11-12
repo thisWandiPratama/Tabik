@@ -86,19 +86,19 @@ class Home extends Component {
               </TouchableOpacity>
             </View>
 
-            <View style={[styles.justifyc, styles.itemc]}>
-              <Text style={[styles.white]}>{this.state.hari}, {this.state.tgl}</Text>
+            <View style={[styles.justify2, styles.itemc]}>
+              <Text style={[styles.date]}>{this.state.hari}, {this.state.tgl}</Text>
               <Text style={[styles.fokus]}>17:57</Text>
-              <View style={[styles.flexrow, {alignItems: 'center'}]}>
+              <View style={[styles.row, {alignItems: 'center'}]}>
                 <Text style={[styles.note]}>Saatnya Shalat Maghrib</Text>
                 <TouchableOpacity style={[styles.details]} onPress={() => this.props.navigation.navigate('Jadwal')}>
-                  <Text style={[styles.white, {fontSize: 10}]}>Lihat Jadwal</Text>
+                  <Text style={{color: '#fff', fontSize: 10}}>Lihat Jadwal</Text>
                 </TouchableOpacity>
               </View>
             </View>
 
             <TouchableOpacity
-              style={[styles.justifyc, styles.itemc, styles.flexrow, styles.jam]}
+              style={[styles.justify2, styles.itemc, styles.row, styles.jam]}
               onPress={() => this.props.navigation.navigate('Jadwal')}
               >
               <View style={[styles.divjadwal]}>
@@ -125,25 +125,27 @@ class Home extends Component {
           </ImageBackground>
         </View>
 
-        <View style={{height: 260}}>
-          <View style={[styles.row, styles.justify1, styles.divmenu1 ]}>
-            <TouchableOpacity style={{width: '30%', alignItems: 'center'}} >
-              <View style={[styles.menu1, styles.justify2,]}>
-                <Text style={[styles.listmenu1]}>BERITA</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{width: '30%', alignItems: 'center'}}>
-              <View style={[styles.menu1, styles.justify2,]}>
-                <Text style={[styles.listmenu1]}>ARTIKEL</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{width: '30%', alignItems: 'center'}}>
-              <View style={[styles.menu1, styles.justify2,]}>
-                <Text style={[styles.listmenu1]}>FATWA</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
+        <View style={[styles.row, styles.justify1, styles.divmenu1 ]}>
+          <TouchableOpacity style={{width: '45%', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('FatwaList')}>
+            <ImageBackground
+                style={[styles.divArtik, styles.justify2]}
+                source={ require('../../../assets/background/artikel.png') }
+              >
+                <Text style={styles.fokusTitle}>FATWA</Text>
+              </ImageBackground>
+          </TouchableOpacity>
+          <TouchableOpacity style={{width: '45%', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('KonsultasiList')}>
+            <ImageBackground
+                style={[styles.divArtik, styles.justify2]}
+                source={ require('../../../assets/background/artikel.png') }
+              >
+                <Text style={styles.fokusTitle}>KONSULTASI</Text>
+              </ImageBackground>
+          </TouchableOpacity>
+        </View>
 
+
+        <View style={{marginBottom: 10}}>
           <View style={{alignItems: 'center'}}>
             <Text style={{alignSelf: 'flex-start',marginLeft: 15, fontSize: 14, fontWeight: 'bold'}}>Fitur Lainnya</Text>
             <View style={[styles.row, styles.justify1, {width: '90%', marginTop: 18}]}>

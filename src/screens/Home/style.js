@@ -2,16 +2,27 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
 
-  justifyc: {
-    justifyContent: 'center',
+
+  flex: {
+    flex: 0,
+  },
+  column: {
+    flexDirection: 'column'
+  },
+  row: {
+    flexDirection: 'row'
+  },
+  justify1: {
+    justifyContent: 'space-between'
+  },
+  justify2: {
+    justifyContent: 'center'
   },
   itemc: {
     alignItems: 'center'
   },
-  flexrow: {
-    flexDirection: 'row'
-  },
-  white: {
+  date: {
+    fontSize: 11,
     color: '#fff'
   },
   divjadwal: {
@@ -19,11 +30,11 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     borderRightWidth: 1,
     alignItems: 'center',
-    borderColor: '#3896A3',
+    borderColor: 'rgba(17, 170, 191, 0.32)',
     justifyContent: 'space-between',
   },
   jadwal: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#3896A3',
     fontFamily: 'Roboto',
   },
@@ -77,27 +88,35 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
-  flex: {
-    flex: 0,
-  },
-  column: {
-    flexDirection: 'column'
-  },
-  row: {
-    flexDirection: 'row'
-  },
-  justify1: {
-    justifyContent: 'space-between'
-  },
-  justify2: {
-    justifyContent: 'center'
-  },
   divmenu1: {
     width: '100%',
-    paddingVertical: 25,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     paddingBottom: 30,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    borderRadius: 20,
+    marginTop: 20,
   },
+
+  divArtik: {
+    width: '100%',
+    height: 80,
+  },
+  fokusTitle: {
+    fontSize: 15,
+    color: '#fff',
+    fontFamily: 'Montserrat-Bold',
+    textAlign: 'center',
+  },
+  noteTitle: {
+    fontSize: 10,
+    color: '#fff',
+    marginTop: 8,
+    fontFamily: 'Montserrat-Regular',
+    textAlign: 'center',
+    letterSpacing: 10
+  },
+
   menu1: {
     height: 51  ,
     width: '100%',

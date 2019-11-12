@@ -8,6 +8,10 @@ import Dewan from '../screens/Dewan/Dewan';
 import Profil from '../screens/Dewan/Profil';
 import Pengurus from '../screens/Dewan/Pengurus';
 import Jadwal from '../screens/Jadwal/Jadwal';
+import Fatwa from '../screens/Fatwa/Fatwa';
+import FatwaList from '../screens/Fatwa/FatwaList';
+import KonsultasiList from '../screens/Konsultasi/KonsultasiList';
+import Konsultasi from '../screens/Konsultasi/Konsultasi';
 
 export default createStackNavigator(
 
@@ -29,6 +33,18 @@ export default createStackNavigator(
     },
     Jadwal: {
       screen: Jadwal,
+    },
+    Fatwa: {
+      screen: Fatwa,
+    },
+    FatwaList: {
+      screen: FatwaList,
+    },
+    KonsultasiList: {
+      screen: KonsultasiList,
+    },
+    Konsultasi: {
+      screen: Konsultasi,
     },
   },
   {

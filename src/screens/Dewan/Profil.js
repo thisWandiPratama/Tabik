@@ -33,10 +33,10 @@ class Profil extends Component {
 
         <View style={[styles.container]}>
           <ImageBackground
-              style={[styles.divProfil, styles.tengah]}
+              style={[styles.divProfil]}
               source={ require('../../../assets/background/profil.jpg') }
             >
-              <Icon name="user-alt" color={'#fff'} size={50} />
+              <Icon name="user-alt" color={'#fff'} size={40} />
               <Text style={styles.title}>PROFIL SINGKAT</Text>
             </ImageBackground>
 
@@ -55,10 +55,6 @@ class Profil extends Component {
 export default Profil;
 
 const styles = StyleSheet.create({
-  tengah: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   back: {
     width: 30,
     height:'100%',
@@ -94,10 +90,15 @@ const styles = StyleSheet.create({
   divProfil: {
     width: 320,
     height: 161,
+    paddingHorizontal: 40,
     backgroundColor: 'rgba(70, 192, 185, 0.67)',
+    flexDirection: 'row',
     borderRadius: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   title: {
+    width: '90%',
     fontSize: 14,
     marginTop: 17,
     color: '#fff',

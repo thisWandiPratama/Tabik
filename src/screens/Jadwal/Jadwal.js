@@ -26,7 +26,7 @@ class Jadwal extends Component {
             <Icon name="arrow-left" color={'#3896A3'} size={22} />
           </TouchableOpacity>
           <View style={[styles.header]}>
-            <Text style={[styles.mainHead]}> Dewan Syariah </Text>
+            <Text style={[styles.mainHead]}> Jadwal Sholat </Text>
           </View>
         </View>
 
