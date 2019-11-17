@@ -12,6 +12,9 @@ import Fatwa from '../screens/Fatwa/Fatwa';
 import FatwaList from '../screens/Fatwa/FatwaList';
 import KonsultasiList from '../screens/Konsultasi/KonsultasiList';
 import Konsultasi from '../screens/Konsultasi/Konsultasi';
+import Tanya from '../screens/Tanya/Tanya';
+import WahdahTv from '../screens/WahdahTv/WahdahTv';
+import Footer from '../component/Footer';
 
 export default createStackNavigator(
 
@@ -45,6 +48,15 @@ export default createStackNavigator(
     },
     Konsultasi: {
       screen: Konsultasi,
+    },
+    Tanya: {
+      screen: Tanya,
+    },
+    WahdahTv: {
+      screen: WahdahTv,
+    },
+    Footer: {
+      screen: Footer,
     },
   },
   {

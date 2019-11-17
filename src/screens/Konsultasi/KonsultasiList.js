@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mainHead: {
-    fontSize: 23,
+    fontSize: 21,
     color: '#3896A3',
     fontWeight: 'bold',
     alignSelf: 'center',

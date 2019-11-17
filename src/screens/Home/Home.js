@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 import styles from './style';
 import axios from 'axios';
@@ -68,11 +68,12 @@ class Home extends Component {
         this.setState({jadwal: e.response.data.data.jadwal});
       })
 
-  }
+  };
 
   render() {
     return (
-      <ScrollView scrollEnable paggingEnable style={{flex: 1, backgroundColor: '#fff'}}>
+      <View style={{flex: 1}}>
+        <ScrollView scrollEnable paggingEnable style={{flex: 1, backgroundColor: '#fff'}}>
 
         <View style={{height: 310, width}}>
           <ImageBackground
@@ -81,8 +82,8 @@ class Home extends Component {
           >
             <View style={[styles.header]}>
               <Text style={[styles.name]}>Tabik Ustadz</Text>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('About')}>
-                <Icon name="info-circle" color="#fff" size={25} />
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('About')} style={{padding: 10}}>
+                <Icon name="info-outline" color="#fff" size={28} />
               </TouchableOpacity>
             </View>
 
@@ -149,19 +150,19 @@ class Home extends Component {
           <View style={{alignItems: 'center'}}>
             <Text style={{alignSelf: 'flex-start',marginLeft: 15, fontSize: 14, fontWeight: 'bold'}}>Fitur Lainnya</Text>
             <View style={[styles.row, styles.justify1, {width: '90%', marginTop: 18}]}>
-              <TouchableOpacity style={{width: '25%', alignItems: 'center'}}>
+              <TouchableOpacity style={{width: '25%', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('WahdahTv')}>
                 <View style={[styles.divmenu2, styles.justify2]}>
                   <Image source={ require('../../../assets/icon/play.png')} />
                 </View>
                 <Text style={[styles.listmenu2]}>Wahdah Tv</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{width: '25%', alignItems: 'center'}}>
+              <TouchableOpacity style={{width: '25%', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('Tanya')}>
                 <View style={[styles.divmenu2, styles.justify2]}>
                   <Image source={ require('../../../assets/icon/help.png')} />
                 </View>
                 <Text style={[styles.listmenu2]}>Tanya Ustadz</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{width: '25%', alignItems: 'center'}}>
+              <TouchableOpacity style={{width: '25%', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('Jadwal')}>
                 <View style={[styles.divmenu2, styles.justify2]}>
                   <Image source={ require('../../../assets/icon/mosque.png')} />
                 </View>
@@ -262,8 +263,8 @@ class Home extends Component {
             </View>
           </ScrollView>
         </View>
-
       </ScrollView>
+      </View>
     );
   }
 

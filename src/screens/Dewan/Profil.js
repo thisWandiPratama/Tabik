@@ -31,21 +31,26 @@ class Profil extends Component {
           </View>
         </View>
 
-        <View style={[styles.container]}>
-          <ImageBackground
-              style={[styles.divProfil]}
-              source={ require('../../../assets/background/profil.jpg') }
-            >
-              <Icon name="user-alt" color={'#fff'} size={40} />
-              <Text style={styles.title}>PROFIL SINGKAT</Text>
-            </ImageBackground>
+        <ScrollView>
+          <View style={[styles.container]}>
+            <ImageBackground
+                  style={[styles.divProfil]}
+                  source={ require('../../../assets/background/profil.jpg') }
+                >
+                <Icon name="user-alt" color={'#fff'} size={40} />
+                <Text style={styles.title}>PROFIL SINGKAT</Text>
+              </ImageBackground>
 
             <View style={{padding: 25}}>
-              <Text style={styles.mainText}>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc eget erat ornare rutrum vitae ac leo. Nulla vitae congue dolor, ut viverra massa. Fusce imperdiet auctor ipsum quis iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu nunc tincidunt, finibus elit eget, </Text>
-              <Text style={styles.mainText}>  Scelerisque enim. Sed eget hendrerit purus, at consequat ante. Quisque eu velit dictum erat porta fringilla ac et enim. Duis pulvinar posuere sem quis posuere. </Text>
-              <Text style={styles.mainText}>  Suspendisse vel porttitor sem, sed vulputate mauris. Aliquam iaculis dui metus, vitae tristique sapien maximus pretium. Aliquam enim neque, dictum vitae efficitur vitae, bibendum nec elit. Nunc vitae dapibus libero.</Text>
+                <Text style={styles.titleText}>Sejarah Singkat Berdirinya Wahdah Islamiyah</Text>
+                <Text style={styles.mainText}>Organisasi ini pertama kali didirikan pada tanggal 18 juni 1988 M dengan nama Yayasan Fathul Muin (YFM), berdasarkan akta notaris Abdullah Ashal, SH No.20. Untuk menghindari kesan kultus individu terhadap KH.Fathul Muin Dg.Mangading (Seorang ulama kharismatik Sulsel yang di masa hidupnya menjadi Pembina para pendiri YFM) dan agar dapat menjadi Lembaga Persatuan Ummat, pada tanggal 19 Februari 1998 M nama YFM berubah menjadi Yayasan Wahdah Islamiyah (YWI) yang berarti “Persatuan Islam” perubahan nama tersebut diresmikan berdasarkan akta notaris Sulprian, SH No.059.</Text>
+                <Text style={styles.mainText}>Sehubungan dengan adanya rencana untuk mendirikan sebuah perguruan tinggi islam, YWI menambah sebuah kata dalam identitasnya menjadi Yayasan Pesantren Wahdah Islamiyah (YPWI) yang dimaksudkan agar dapat juga menaungi lembaga-lembaga pendidikan tingginya, berdasarkan Akta Notaris  Sulprian, SH No.055 tanggal 25 Mei 2000.</Text>
+                <Text style={styles.mainText}>Perkembangan Dakwah Wahdah Islamiyah yang sangat pesat dirasa tidak memungkinkan lagi lembaga Islam ini bergerak dalam bentuk Yayasan, maka dalam Musyawarah YPWI ke-2, tanggal 1 Shafar 1422 H (bertepatan dengan 14 April 2002 M) disepakati mendirikan organisasi massa (ormas) dengan nama yang sama, yaitu Wahdah Islamiyah (WI). Sejak saat itulah, YPWI yang merupakan cikal bakal berdirinya ormas WI disederhanakan fungsinya sebagai lembaga yang mengelola pendidikan formal milik Wahdah Islamiyah.(untuk selengkapnya baca buku :Sejarah Wahdah Islamiyah)</Text>
+                <Text style={styles.titleText}>Manhaj Wahdah Islamiyah</Text>
+                <Text style={styles.mainText}>Wahdah Islamiyah adalah sebuah Organisasi Massa (Ormas) Islam yang mendasarkan pemahaman dan amaliyahnya pada Al Qur’an dan As Sunnah sesuai pemahaman As Salaf Ash-Shalih (Manhaj Ahlussunnah Wal Jamaah). Organisasi ini bergerak di bidang da’wah, pendidikan, sosial, kewanitaan, informasi, kesehatan dan lingkungan hidup.</Text>
             </View>
-        </View>
+          </View>
+        </ScrollView>
 
       </View>
     );
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mainHead: {
-    fontSize: 23,
+    fontSize: 21,
     color: '#3896A3',
     fontWeight: 'bold',
     alignSelf: 'center',
@@ -107,6 +112,12 @@ const styles = StyleSheet.create({
   },
   mainText: {
     fontSize: 14,
+    textAlign: 'justify',
+    marginTop: 20,
+  },
+  titleText: {
+    fontSize: 16,
+    fontWeight: 'bold',
     textAlign: 'justify',
     marginTop: 20,
   },
