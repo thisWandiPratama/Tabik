@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import Icon from "react-native-vector-icons/MaterialIcons";
+import { WebView } from 'react-native-webview';
+import Footer from "../../component/Footer";
 
 import styles from './style';
 import axios from 'axios';
@@ -40,40 +42,42 @@ class Home extends Component {
     var monthNames = ["January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
       ];
+
     var t = new Date();
     this.setState({tgl: t.getDate() + ' ' + monthNames[t.getMonth()] + ' ' + t.getFullYear()});
 
-     let formdata = new FormData();
-     formdata.append('act', 'TANGGALM');
-     formdata.append('data', '2019-11-08');
-     formdata.append('latitude', '-5.147');
-     formdata.append('longitude', '119.432');
-     formdata.append('timezone', '8');
-     formdata.append('wilayah', 'Makassar');
+    let formdata = new FormData();
+    formdata.append('act', 'TANGGALM');
+    formdata.append('data', '2019-11-20');
+    formdata.append('latitude', '-5.147');
+    formdata.append('longitude', '119.432');
+    formdata.append('timezone', '8');
+    formdata.append('wilayah', 'Makassar');
 
-      axios({
-        url: 'https://krfdsawi.stiba.ac.id/wss/',
-        method: 'post',
-        data: formdata,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(res => {
-        console.log(res.response.data.info)
-        // const jadwals = res.data;
-        // this.setState({ jadwals });
-      })
-      .catch(e => {
-        // console.log(e.response.data.data.jadwal)
-        this.setState({jadwal: e.response.data.data.jadwal});
-      })
+     axios({
+       url: 'http://krf.simakad.id/wss/',
+       method: 'post',
+       data: formdata,
+       headers: {
+         'Content-Type': 'multipart/form-data'
+       }
+     }).then(res => {
+       console.log(res.response.data.info)
+       // const jadwals = res.data;
+       // this.setState({ jadwals });
+     })
+     .catch(e => {
+       // console.log(e.response.data.data.jadwal)
+       this.setState({jadwal: e.response.data.data.jadwal});
+     })
 
-  };
+ };
+
 
   render() {
     return (
       <View style={{flex: 1}}>
-        <ScrollView scrollEnable paggingEnable style={{flex: 1, backgroundColor: '#fff'}}>
+        <ScrollView scrollEnable showsVerticalScrollIndicator={false} paggingEnable style={{flex: 1, backgroundColor: '#fff'}}>
 
         <View style={{height: 310, width}}>
           <ImageBackground
@@ -144,7 +148,6 @@ class Home extends Component {
               </ImageBackground>
           </TouchableOpacity>
         </View>
-
 
         <View style={{marginBottom: 10}}>
           <View style={{alignItems: 'center'}}>
@@ -237,33 +240,20 @@ class Home extends Component {
         </View>
 
         <View style={{marginBottom: 30}}>
-          <View style={{width, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 15, marginTop: 20}}>
-            <Text style={{fontSize: 14, fontWeight: 'bold'}}>Wahdah TV</Text>
+          <View style={{width, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 15, marginTop: 20, marginBottom: 10}}>
+            <Text style={{fontSize: 14, fontWeight: 'bold'}}>Radio Wahdah</Text>
             <TouchableOpacity style={{padding: 5}}>
-              <Text style={{fontSize: 12, fontWeight: '900', color: 'rgb(70, 165, 201)'}}>Lihat Semua</Text>
+              <Text style={{fontSize: 12, fontWeight: '900', color: 'rgb(70, 165, 201)'}}>Download </Text>
             </TouchableOpacity>
           </View>
-
-          <ScrollView horizontal scrollEnable paggingEnable showsHorizontalScrollIndicator={false}>
-            <View style={{width: 225, paddingTop: 16, paddingLeft: 15, backgroundColor: ' green'}}>
-              <TouchableOpacity>
-                <Image source={require('../../../assets/santri.jpg')} style={{height: 112, width: 225}}/>
-                <View style={{padding: 13, borderWidth: 1, borderTopWidth: 0, borderColor: 'rgb(227, 226, 226)'}}>
-                  <Text style={{fontSize: 11, fontWeight: 'bold', marginBottom: 10}}>DEVINISI DAKWAH ISLAM | USTADZ DR. RAHMAT ABDUL RAHMAN, LC, M.A</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-            <View style={{width: 225, paddingTop: 16, paddingLeft: 15, backgroundColor: ' green'}}>
-              <TouchableOpacity>
-                <Image source={require('../../../assets/santri.jpg')} style={{height: 112, width: 225}}/>
-                <View style={{padding: 13, borderWidth: 1, borderTopWidth: 0, borderColor: 'rgb(227, 226, 226)'}}>
-                  <Text style={{fontSize: 11, fontWeight: 'bold', marginBottom: 10}}>DEVINISI DAKWAH ISLAM | USTADZ DR. RAHMAT ABDUL RAHMAN, LC, M.A</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
+          <View style={{width, alignItems: 'center', paddingHorizontal: 15}}>
+            <TouchableOpacity style={{width: '100%', height: 180, padding: 20, backgroundColor: 'rgb(228, 228, 228)', alignItems: 'center'}} onPress={() => this.props.navigation.navigate('Radio')}>
+              <Image source={require('../../../assets/asset/radio.png')} style={{height: '100%', width: '75%'}}/>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
+
       </View>
     );
   }

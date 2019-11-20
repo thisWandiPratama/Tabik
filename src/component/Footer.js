@@ -7,37 +7,40 @@ import {
   Dimensions,
   TouchableOpacity,
   ScrollView,
-  ImageBackground
+  ImageBackground,
+  ActivityIndicator,
 } from 'react-native';
 
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { WebView } from 'react-native-webview';
 
 const { width, height } = Dimensions.get('window');
 
-class Tanya extends Component {
+class Footer extends Component {
 
   render() {
     const { navigation } = this.props;
     return (
-        <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 40, flexDirection: 'row', justifyContent: 'space-around', backgroundColor: '#fff', paddingVertical: 22, borderTopWidth: 2, borderTopColor: 'rgba(212, 212, 212, 0.32)'}}>
+      <View style={{flex: 1, backgroundColor: '#fff'}}>
+
+        <View style={[styles.divHeader]}>
           <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.goBack()}>
-            <Icon name="home" color={'#3896A3'} size={22} />
+            <Icon name="arrow-left" color={'#3896A3'} size={22} />
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]}>
-            <Icon name="play" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]}>
-            <Icon name="question" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]}>
-            <Icon name="users" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
+          <View style={[styles.header]}>
+            <Text style={[styles.mainHead]}> Radio Wahdah </Text>
+          </View>
         </View>
+
+        <WebView
+          source={{ uri: 'http://radio.wahdah.or.id' }}
+        />
+      </View>
     );
   }
 
 }
-export default Tanya;
+export default Footer;
 
 const styles = StyleSheet.create({
   divHeader: {

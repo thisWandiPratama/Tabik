@@ -7,7 +7,8 @@ import {
   Image,
   Dimensions,
   ScrollView,
-  TouchableOpacity
+  ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 
 import HTMLView from 'react-native-htmlview';
@@ -15,20 +16,6 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 
 
 const { width, height } = Dimensions.get('window');
-
-
-// static navigationOptions = ({ navigation }) => {
-//   return {
-//     header: (
-//       <View style={[styles.flex, styles.row, styles.header]}>
-//         <TouchableOpacity style={styles.back} onPress={() => navigation.goBack()}>
-//           <Icon name="arrow-left" color={'#3896A3'} size={22} />
-//         </TouchableOpacity>
-//       </View>
-//     ),
-//     headerTransparent: true,
-//   }
-// }
 
 class Fatwa extends Component {
 
@@ -42,12 +29,15 @@ class Fatwa extends Component {
 
         <ScrollView style={styles.flex}>
           <View style={[styles.flex, styles.content]}>
-            <View style={{backgroundColor: 'red', width, height: 300}}>
-              <Image
+            <View style={{width, height: 300}}>
+              <ImageBackground
+                style={{width, height: '100%', paddingTop: 10, paddingLeft: 15}}
                 source={{uri: fatwa.thumbnail }}
-                resizeMode='cover'
-                style={{ width: '100%', height: '100%'}}
-              />
+              >
+                <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                  <Icon name="arrow-left" color={'#rgb(190, 190, 190)'} size={26} style={{top: 5, left: 5}}/>
+                </TouchableOpacity>
+              </ImageBackground>
             </View>
             <View style={[styles.flex, styles.contentHeader]}>
               <Text style={styles.title}>{fatwa.title}</Text>

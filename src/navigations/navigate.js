@@ -14,6 +14,7 @@ import KonsultasiList from '../screens/Konsultasi/KonsultasiList';
 import Konsultasi from '../screens/Konsultasi/Konsultasi';
 import Tanya from '../screens/Tanya/Tanya';
 import WahdahTv from '../screens/WahdahTv/WahdahTv';
+import Radio from '../screens/Radio/Radio';
 import Footer from '../component/Footer';
 
 export default createStackNavigator(
@@ -54,6 +55,9 @@ export default createStackNavigator(
     },
     WahdahTv: {
       screen: WahdahTv,
+    },
+    Radio: {
+      screen: Radio,
     },
     Footer: {
       screen: Footer,

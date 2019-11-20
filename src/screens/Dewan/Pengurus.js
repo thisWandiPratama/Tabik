@@ -32,7 +32,7 @@ class Pengurus extends Component {
           </View>
         </View>
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={[styles.container]}>
           <ImageBackground
               style={[styles.divPengurus]}
@@ -43,7 +43,7 @@ class Pengurus extends Component {
             </ImageBackground>
 
             <View style={{padding: 25}}>
-                <Text style={styles.titleFocus}>SUSUNAN PENGURUS DEWAN SYARIAH WAHDAH ISLAMIYAH PERIODE</Text>
+                <Text style={styles.titleFocus}>SUSUNAN PENGURUS DEWAN SYARIAH WAHDAH ISLAMIYAH</Text>
                 <Text style={styles.titleFocus}>1437-1442 H/ 2016-2021 M</Text>
                 <View>
                   <Text style={styles.titleText}>Komisi Tetap (PengurusHarian) :</Text>
@@ -200,12 +200,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   titleFocus: {
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   titleText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     marginTop: 25,
   },

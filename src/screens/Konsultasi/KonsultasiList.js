@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
+import Footer from "../../component/Footer";
 import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/FontAwesome5";
 
@@ -40,10 +41,10 @@ class Konsultasi extends Component {
 
   renderKonsultasis = () => {
     return (
-      <View style={[ styles.column, styles.datahome, {paddingTop: 25, height: 580}]}>
+      <View style={[  styles.column, {paddingTop: 25, height: 530} ]}>
         <FlatList
           scrollEnabled
-          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           style={{ overflow:'visible', height,}}
           data={this.state.posts}
           keyExtractor={(item, index) => `${item.id}`}
@@ -71,7 +72,7 @@ class Konsultasi extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <View style={{flex: 1, backgroundColor: '#fff', paddingHorizontal: 13}}>
         <View style={[styles.divHeader]}>
           <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.goBack()}>
             <Icon name="arrow-left" color={'#3896A3'} size={22} />
@@ -81,10 +82,24 @@ class Konsultasi extends Component {
           </View>
         </View>
 
-        <ScrollView>
+        <ScrollView  style={{height: 500, paddingHorizontal: 13}}>
           {this.renderKonsultasis()}
         </ScrollView>
 
+        <View style={{ flex:1, bottom: 0, height: 40, flexDirection: 'row', justifyContent: 'space-around', backgroundColor: '#fff', borderTopWidth: 2, borderTopColor: 'rgba(212, 212, 212, 0.32)'}}>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Home')}>
+            <Icon name="home" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('WahdahTv')}>
+            <Icon name="play" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Tanya')}>
+            <Icon name="question" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Dewan')}>
+            <Icon name="users" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

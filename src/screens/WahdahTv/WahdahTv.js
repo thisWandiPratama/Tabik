@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import Icon from "react-native-vector-icons/FontAwesome5";
-import Footer from "../../component/Footer";
+// import Footer from "../../component/Footer";
 import { WebView } from 'react-native-webview';
 
 const { width, height } = Dimensions.get('window');
@@ -34,9 +34,22 @@ class WahdahTv extends Component {
 
         <WebView
           source={{ uri: 'https://wahdah.or.id/video/' }}
-          style={{ marginBottom: 20 }}
         />
-        <Footer />
+
+        <View style={{ flex:0.08, bottom: 0, height: 40, flexDirection: 'row', justifyContent: 'space-around', backgroundColor: '#fff', borderTopWidth: 2, borderTopColor: 'rgba(212, 212, 212, 0.32)'}}>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Home')}>
+            <Icon name="home" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('WahdahTv')}>
+            <Icon name="play" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Tanya')}>
+            <Icon name="question" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Dewan')}>
+            <Icon name="users" color={'#3896A3'} size={22} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

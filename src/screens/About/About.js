@@ -36,7 +36,7 @@ class About extends Component {
               <Text style={[styles.note]}>versi 1.0.0</Text>
             </View>
 
-            <Text style={[styles.paragraph]}>     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc eget erat ornare rutrum vitae ac leo. Nulla vitae congue dolor, ut viverra massa. Fusce imperdiet auctor ipsum quis iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eu nunc tincidunt, finibus elit eget, </Text>
+            <Text style={[styles.paragraph]}>     Tabik Ustadz adalah aplikasi</Text>
             <Text style={[styles.paragraph]}>     Scelerisque enim. Sed eget hendrerit purus, at consequat ante. Quisque eu velit dictum erat porta fringilla ac et enim. Duis pulvinar posuere sem quis posuere. </Text>
             <Text style={[styles.paragraph]}>     Suspendisse vel porttitor sem, sed vulputate mauris. Aliquam iaculis dui metus, vitae tristique sapien maximus pretium. Aliquam enim neque, dictum vitae efficitur vitae, bibendum nec elit. Nunc vitae dapibus libero.</Text>
 

@@ -31,7 +31,7 @@ class Profil extends Component {
           </View>
         </View>
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={[styles.container]}>
             <ImageBackground
                   style={[styles.divProfil]}
@@ -114,9 +114,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'justify',
     marginTop: 20,
+    lineHeight: 20
   },
   titleText: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'justify',
     marginTop: 20,
