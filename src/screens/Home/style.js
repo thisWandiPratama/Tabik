@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   bgimg: {
     width,
-    height: 270,
+    height: 275,
     paddingBottom: 20,
     justifyContent: 'space-between',
   },
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(42, 194, 227, 0.7)',
   },
   jam: {
-    top: 45,
+    top: 20,
     width: 297,
     height: 63,
     left: 31,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 
   divArtik: {
     width: '100%',
-    height: 80,
+    height: 65,
   },
   fokusTitle: {
     fontSize: 15,

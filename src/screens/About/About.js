@@ -43,7 +43,7 @@ class About extends Component {
             <View style={{marginTop: 30, flexDirection: 'row'}}>
               <Image
                style={styles.logo}
-               source={require('../../../assets/asset/wahdah.png')}
+               source={require('../../../assets/asset/wahdah.jpeg')}
               />
             <View style={{flexDirection: 'column', marginLeft: 20}}>
                 <View style={styles.wahdah}>
@@ -143,6 +143,10 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: '#fff'
   },
+  logo: {
+    width: 150,
+    height: 120
+  }
 });
 
 export default About;

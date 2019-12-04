@@ -1,10 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {
+  Left,
+  Body,
+  Right,
+  Title,
+  Footer,
+  Header,
+  Button,
+  Content,
+  Container,
+  FooterTab,
+} from 'native-base';
+
 import {
   Text,
   View,
-  TouchableHighlight,
-  Image,
   TouchableOpacity,
+  Image,
   StyleSheet,
   FlatList,
   Dimensions,
@@ -15,7 +27,6 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
-import Footer from "../../component/Footer";
 import HTMLView from 'react-native-htmlview';
 import Icon from "react-native-vector-icons/FontAwesome5";
 
@@ -30,7 +41,6 @@ class Konsultasi extends Component {
   componentDidMount () {
     axios.get('https://wahdah.or.id/api/get_category_posts/?id=491')
       .then( (response) => {
-        console.log(response.data.posts)
         this.setState({posts: response.data.posts});
       })
       .catch((error) => {
@@ -38,12 +48,12 @@ class Konsultasi extends Component {
       });
   }
 
-
   renderKonsultasis = () => {
     return (
-      <View style={[  styles.column, {paddingTop: 25, height: 530} ]}>
+      <View style={[ styles.column, {paddingTop: 15, height: 550}]}>
         <FlatList
           scrollEnabled
+          maxToRenderPerBatch={3}
           showsVerticalScrollIndicator={false}
           style={{ overflow:'visible', height,}}
           data={this.state.posts}
@@ -58,7 +68,7 @@ class Konsultasi extends Component {
   renderKonsultasi = item => {;
     return (
 
-      <TouchableOpacity style={{marginBottom: 25}} activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Konsultasi', { konsultasi: item })}>
+      <TouchableOpacity style={{marginBottom: 5}} activeOpacity={0.8} onPress={() => this.props.navigation.navigate('Konsultasi', { konsultasi: item })}>
         <View style={{flexDirection: 'row', borderBottomWidth: 1, borderColor: 'rgb(227, 227, 227)'}}>
           <Image source={{uri: item.thumbnail }} style={{height: 85, width: 110}}/>
           <View style={{paddingTop: 4, paddingLeft: 20,  paddingBottom: 10, width: 200, justifyContent: 'space-between'}}>
@@ -72,35 +82,37 @@ class Konsultasi extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: '#fff', paddingHorizontal: 13}}>
-        <View style={[styles.divHeader]}>
-          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.goBack()}>
-            <Icon name="arrow-left" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <View style={[styles.header]}>
-            <Text style={[styles.mainHead]}> Konsultasi Agama </Text>
-          </View>
-        </View>
-
-        <ScrollView  style={{height: 500, paddingHorizontal: 13}}>
+      <Container>
+        <Header  style={{backgroundColor:'#fff'}}>
+          <Left>
+            <Button style={{backgroundColor:'#fff'}}>
+              <Icon name="arrow-left" color={'#3896A3'} size={22} />
+            </Button>
+          </Left>
+          <Body>
+            <Title style={{  fontSize: 21, color: '#3896A3', fontWeight: 'bold', fontFamily: 'SourceSansPro',}}>Kumpulan Konsultasi</Title>
+          </Body>
+        </Header>
+        <Content>
           {this.renderKonsultasis()}
-        </ScrollView>
-
-        <View style={{ flex:1, bottom: 0, height: 40, flexDirection: 'row', justifyContent: 'space-around', backgroundColor: '#fff', borderTopWidth: 2, borderTopColor: 'rgba(212, 212, 212, 0.32)'}}>
-          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Home')}>
-            <Icon name="home" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('WahdahTv')}>
-            <Icon name="play" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Tanya')}>
-            <Icon name="question" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.back]} onPress={() => this.props.navigation.navigate('Dewan')}>
-            <Icon name="users" color={'#3896A3'} size={22} />
-          </TouchableOpacity>
-        </View>
-      </View>
+        </Content>
+        <Footer style={{height: 45}}>
+            <FooterTab style={{backgroundColor:'#fff', height: 45, borderTopWidth: 2, borderTopColor: 'rgba(212, 212, 212, 0.32)'}}>
+            <Button onPress={() => this.props.navigation.navigate('Home')}>
+              <Icon name="home" color={'#3896A3'} size={22} />
+            </Button>
+            <Button onPress={() => this.props.navigation.navigate('WahdahTv')}>
+              <Icon name="play" color={'#3896A3'} size={22} />
+            </Button>
+            <Button onPress={() => this.props.navigation.navigate('Tanya')}>
+              <Icon name="question" color={'#3896A3'} size={22} />
+            </Button>
+            <Button onPress={() => this.props.navigation.navigate('Dewan')}>
+              <Icon name="users" color={'#3896A3'} size={22} />
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
     );
   }
 }
@@ -127,6 +139,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     fontFamily: 'SourceSansPro',
+  },
+  title: {
+    fontSize: 13,
+    fontWeight: 'bold'
   },
   back: {
     width: 30,
